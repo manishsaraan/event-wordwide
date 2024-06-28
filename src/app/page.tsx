@@ -11,15 +11,12 @@ export default function Home() {
       </h1>
       <p className="mt-7 mb-12 text-2xl opacity-75 lg:text-3xl">
         Browse more than{" "}
-        <span className="font-bold italic underline text-[#a4f839]">
-          {" "}
-          10,000
-        </span>{" "}
+        <span className="font-bold italic underline text-accent"> 10,000</span>{" "}
         events
       </p>
       <form className="w-full lg:w-[580px]">
         <input
-          className="w-full focus:ring-2 focus:bg-white/10 h-16 rounded-lg bg-white/[7%] px-6 outline-none ring-[#a4f839] transition"
+          className="w-full focus:ring-2 focus:bg-white/10 h-16 rounded-lg bg-white/[7%] px-6 outline-none ring-accent transition"
           spellCheck={false}
           placeholder="search events in the city..."
         />
