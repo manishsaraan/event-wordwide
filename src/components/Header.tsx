@@ -14,7 +14,7 @@ const routes = [
   },
   {
     name: "All Events",
-    path: "/event/all",
+    path: "/events/all",
   },
 ];
 export default function Header() {
