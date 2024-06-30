@@ -5,7 +5,7 @@ export type EventoEvent = {
   city: string;
   location: string;
   date: Date;
-  orgnizerName: string;
+  organizerName: string;
   description: string;
   imageUrl: string;
 };
