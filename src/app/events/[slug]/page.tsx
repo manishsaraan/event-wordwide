@@ -23,7 +23,7 @@ export default async function page({ params }: EventsPageParams) {
       : `Events in ${slug.charAt(0).toUpperCase() + slug.slice(1)}`;
   return (
     <main className="flex flex-col items-center py-24 px-[20px] min-h-[110vh]">
-      <H1>{headline}</H1>
+      <H1 className="mb-28">{headline}</H1>
       <EventsList events={events} />
     </main>
   );
