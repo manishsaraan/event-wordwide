@@ -24,3 +24,13 @@
   scrollbar-width: thin;
   scrollbar-color: #0f1015 rgba(255, 255, 255, 0.1);
 }
+
+/* @layer utilities {
+  .active\:scale-102 {
+    @apply transform scale-102;
+  }
+}
+
+.state-effects {
+  @apply hover:scale-105 active:scale-102 transition focus:scale-105;
+} */

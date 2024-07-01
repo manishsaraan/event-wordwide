@@ -26,7 +26,7 @@ export default function EventCard({ event }: EventCardProps) {
       rounded-xl overflow-hidden"
       >
         <Image
-          className="h-[60%] object-fit"
+          className="h-[60%] object-cover"
           src={event.imageUrl}
           alt={event.name}
           height={280}
