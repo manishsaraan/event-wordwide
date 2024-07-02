@@ -8,3 +8,7 @@ export function cn(...classes: ClassValue[]) {
 export async function sleeper() {
   return new Promise((resolve) => setTimeout(resolve, 2000));
 }
+
+export function capitalize(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
