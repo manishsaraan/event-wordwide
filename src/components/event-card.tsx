@@ -18,7 +18,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <Link
       className="flex-1 basis-80 flex-col max-h-[380px] max-w-[500px]"
-      href={`/${event.slug}`}
+      href={`/event/${event.slug}`}
     >
       <section
         className="hover:scale-105 flex flex-col w-full h-full active:scale-[1.02] transition 
