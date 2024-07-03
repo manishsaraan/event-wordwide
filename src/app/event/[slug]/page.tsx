@@ -1,6 +1,5 @@
 import H1 from "@/components/H1";
 import { getEvent } from "@/lib/api";
-import { EventoEvent } from "@/lib/types";
 import { capitalize, sleeper } from "@/lib/util";
 import { Metadata } from "next";
 import Image from "next/image";

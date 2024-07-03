@@ -1,6 +1,5 @@
 import EventsList from "@/components/EventsList";
 import H1 from "@/components/H1";
-import { EventoEvent } from "@/lib/types";
 import { capitalize, sleeper } from "@/lib/util";
 import React, { Suspense } from "react";
 import Loading from "./loading";
