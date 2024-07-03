@@ -1,4 +1,5 @@
 import H1 from "@/components/H1";
+import { getEvent } from "@/lib/api";
 import { EventoEvent } from "@/lib/types";
 import { capitalize, sleeper } from "@/lib/util";
 import { Metadata } from "next";
@@ -13,10 +14,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
-  const resp = await fetch(
-    `https://bytegrad.com/course-assets/projects/evento/api/events/${slug}`
-  );
-  const event: EventoEvent = await resp.json();
+  const event = await getEvent(slug);
   return {
     title: "Event: " + event.name,
     description: "Events in " + slug,
@@ -25,11 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EventPage({ params }: Props) {
   const { slug } = params;
-
-  const resp = await fetch(
-    `https://bytegrad.com/course-assets/projects/evento/api/events/${slug}`
-  );
-  const event: EventoEvent = await resp.json();
+  const event = await getEvent(slug);
 
   return (
     <main>

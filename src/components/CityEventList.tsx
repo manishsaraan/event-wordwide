@@ -1,18 +1,9 @@
 import { EventoEvent } from "@/lib/types";
 import React from "react";
 import EventsList from "./EventsList";
+import { getEvents } from "@/lib/api";
 
 export default async function CityEventList({ slug }: { slug: string }) {
-  const resp = await fetch(
-    "https://bytegrad.com/course-assets/projects/evento/api/events?city=" +
-      slug,
-    {
-      next: {
-        revalidate: 30,
-      },
-    }
-  );
-  const events: EventoEvent[] = await resp.json();
-
+  const events = await getEvents(slug);
   return <EventsList events={events} />;
 }
