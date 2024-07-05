@@ -3,6 +3,7 @@ import { getEvent } from "@/lib/api";
 import { capitalize, sleeper } from "@/lib/util";
 import { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -11,11 +12,23 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  // top 100 popular events
+  return [
+    {
+      slug: "science-space-expo",
+    },
+    {
+      slug: "global-food-festival",
+    },
+  ];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
   const event = await getEvent(slug);
   return {
-    title: "Event: " + event.name,
+    title: "Event: " + event?.name,
     description: "Events in " + slug,
   };
 }
@@ -23,6 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function EventPage({ params }: Props) {
   const { slug } = params;
   const event = await getEvent(slug);
+
+  if (!event) {
+    notFound();
+  }
 
   return (
     <main>
