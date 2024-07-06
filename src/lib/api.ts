@@ -1,3 +1,5 @@
+import "server-only";
+
 import { EventoEvent } from "@prisma/client";
 import { capitalize } from "./util";
 import prisma from "./db";

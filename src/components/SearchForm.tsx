@@ -1,4 +1,5 @@
 "use client";
+import { getEvent } from "@/lib/api";
 import { useRouter } from "next/navigation";
 
 import { useState } from "react";
@@ -6,6 +7,7 @@ import { useState } from "react";
 export default function SearchForm() {
   const [search, setSearch] = useState("");
   const router = useRouter();
+  getEvent("sdfsdf");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
