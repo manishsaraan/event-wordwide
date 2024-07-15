@@ -13,7 +13,7 @@ export default function SearchForm() {
       return;
     }
 
-    router.push("/events/all");
+    router.push("/events/" + search);
   };
   return (
     <form onSubmit={handleSubmit} className="w-full lg:w-[580px]">

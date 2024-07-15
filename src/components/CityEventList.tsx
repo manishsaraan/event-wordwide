@@ -6,10 +6,10 @@ import PaginationControls from "./pagination-controls";
 
 export default async function CityEventList({
   slug,
-  page,
+  page = 1,
 }: {
   slug: string;
-  page: number;
+  page?: number;
 }) {
   const { events, totalCount } = await getEvents(slug, page);
   const prevPath = page > 1 ? `/events/${slug}?page=${page - 1}` : "";
